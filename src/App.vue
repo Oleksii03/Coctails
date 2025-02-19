@@ -2,6 +2,8 @@
 import { RouterView } from "vue-router";
 </script>
 
-<template></template>
+<template>
+  <h1>Coctails</h1>
+</template>
 
 <style scoped lang="scss"></style>
