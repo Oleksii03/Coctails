@@ -14,7 +14,6 @@ const props = defineProps({
     <div :style="` background-image: url(${imgUrl})`" class="img"></div>
     <div class="main">
       <el-button class="btn">Get random cocktail</el-button>
-      <h1 class="title">Welcome to CocktailApp</h1>
       <slot></slot>
     </div>
   </div>
