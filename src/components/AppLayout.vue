@@ -7,15 +7,20 @@ const props = defineProps({
 });
 </script>
 
+// ====TEMPLATE====================
+
 <template>
   <div class="root">
     <div :style="` background-image: url(${imgUrl})`" class="img"></div>
     <div class="main">
       <el-button class="btn">Get random cocktail</el-button>
+
+      <slot></slot>
     </div>
   </div>
 </template>
 
+// ====STYLES====================
 <style lang="scss" scoped>
 @import "../assets/styles/main";
 // -----------------------------
@@ -46,5 +51,14 @@ const props = defineProps({
   background-color: $accent;
   border-color: $accent;
   color: $text;
+  font-size: 16px;
+  font-family: "Exo 2", serif;
+  letter-spacing: 0.5px;
+  transition: all 250ms ease-in-out;
+
+  &:hover {
+    background-color: darken($accent, 15%);
+    border-color: darken($accent, 10%);
+  }
 }
 </style>
