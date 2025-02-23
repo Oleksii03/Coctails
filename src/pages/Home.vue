@@ -3,7 +3,7 @@ import AppLayout from "@/components/AppLayout.vue";
 </script>
 
 <template>
-  <AppLayout :imgUrl="'src/assets/img/bg-1.jpg'">
+  <AppLayout imgUrl="src/assets/img/bg-1.jpg">
     <div class="wrapper">
       <div class="info">
         <h1 class="title">Choose your drink</h1>
@@ -14,7 +14,7 @@ import AppLayout from "@/components/AppLayout.vue";
 </template>
 
 <style lang="scss" scoped>
-@import "../assets/styles/main.scss";
+@import "@assets/styles/main";
 // ---------------------------------
 
 .wrapper {

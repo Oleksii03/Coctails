@@ -11,7 +11,7 @@ const props = defineProps({
 
 <template>
   <div class="root">
-    <div :style="` background-image: url(${imgUrl})`" class="img"></div>
+    <div :style="`background-image: url(${imgUrl})`" class="img"></div>
     <div class="main">
       <el-button class="btn">Get random cocktail</el-button>
       <slot></slot>
@@ -21,13 +21,15 @@ const props = defineProps({
 
 // ====STYLES====================
 <style lang="scss" scoped>
-@import "../assets/styles/main";
+@import "@assets/styles/main";
 // -----------------------------
 
 .root {
   display: flex;
   background-color: $bgColor;
   height: 100vh;
+
+  // background-image: url("@assets/img/bg-1.jpg");
 }
 
 .img {
