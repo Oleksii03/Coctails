@@ -1,5 +1,10 @@
 <script setup>
 import AppLayout from "@/components/AppLayout.vue";
+import { useRootStore } from "@/stores/root";
+
+const rootStore = useRootStore();
+
+rootStore.getIngredients();
 </script>
 
 <template>
