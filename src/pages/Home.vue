@@ -21,7 +21,6 @@ rootStore.getIngredients();
 <style lang="scss" scoped>
 @import "@assets/styles/main";
 // ---------------------------------
-
 .wrapper {
   display: flex;
   align-items: center;
