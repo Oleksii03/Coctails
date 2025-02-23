@@ -11,7 +11,9 @@ const props = defineProps({
 
 <template>
   <div class="root">
-    <div :style="`background-image: url(${imgUrl})`" class="img"></div>
+    <div class="img">
+      <img :src="imgUrl" alt="Cocktail" />
+    </div>
     <div class="main">
       <el-button class="btn">Get random cocktail</el-button>
       <slot></slot>
@@ -35,6 +37,12 @@ const props = defineProps({
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .main {
