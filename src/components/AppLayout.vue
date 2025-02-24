@@ -14,6 +14,7 @@ const props = defineProps({
     <div class="img">
       <img :src="imgUrl" alt="Cocktail" />
     </div>
+
     <div class="main">
       <el-button class="btn">Get random cocktail</el-button>
       <slot></slot>
@@ -28,26 +29,39 @@ const props = defineProps({
 
 .root {
   display: flex;
+  flex-direction: column;
   background-color: $bgColor;
-  height: 100vh;
+  min-height: 100vh;
+
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .img {
-  width: 55%;
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
+  @media (max-width: 767px) {
+    order: 2;
+    max-height: 450px;
+  }
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+
+    @media (max-width: 767px) {
+      max-height: 450px;
+    }
   }
 }
 
 .main {
   position: relative;
-  width: 45%;
+  // width: 45%;
   padding: 32px 40px;
 }
 
