@@ -1,0 +1,18 @@
+.select {
+  .el-select__wrapper {
+    background-color: $bgColor;
+  }
+
+  .el-select-dropdown__list {
+    background-color: $bgColor;
+    color: $text;
+  }
+}
+.el-select-dropdown__list {
+  background-color: $bgColor;
+  border-radius: 3px;
+  color: $text;
+  & > li {
+    padding: 0px 10px;
+  }
+}
