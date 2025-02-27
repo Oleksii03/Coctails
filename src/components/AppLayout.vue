@@ -31,7 +31,8 @@ const props = defineProps({
   display: flex;
   flex-direction: column;
   background-color: $bgColor;
-  min-height: 100vh;
+  // height: 100vh;
+  // overflow: hidden;
 
   @media screen and (min-width: 768px) {
     display: grid;
@@ -52,6 +53,7 @@ const props = defineProps({
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: 50% 0%;
 
     @media (max-width: 767px) {
       max-height: 450px;
@@ -61,7 +63,6 @@ const props = defineProps({
 
 .main {
   position: relative;
-  // width: 45%;
   padding: 32px 40px;
 }
 

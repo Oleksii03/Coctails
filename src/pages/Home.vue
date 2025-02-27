@@ -34,6 +34,13 @@ const ingredient = ref(null);
             />
           </el-select>
         </div>
+
+        <p class="text">
+          Try our delicious cocktail recipes for every occasion. Find delicious
+          cocktail recipes by ingredient through our cocktail generator.
+        </p>
+
+        <img class="img" src="@assets/img/coctails.png" alt="Coctails" />
       </div>
     </div>
   </AppLayout>
@@ -60,12 +67,16 @@ const ingredient = ref(null);
   width: 220px;
 }
 
-.el-select-dropdown,
-.el-popper,
-.el-scrollbar,
-.el-scrollbar__view {
-  color: $bgColor !important;
-  padding: 5px !important;
-  background-color: $bgColor !important;
+.text {
+  max-width: 516px;
+  margin: 0 auto;
+  padding-top: 50px;
+  line-height: 36px;
+  letter-spacing: 0.1em;
+  color: $textMuted;
+}
+
+.img {
+  margin: 60px auto 0;
 }
 </style>
