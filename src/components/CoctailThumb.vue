@@ -9,10 +9,12 @@ const props = defineProps({
 
 <template>
   <div class="root">
-    <div
-      :style="`background-image: url(${coctail.strDrinkThumb})`"
-      class="pic"
-    ></div>
+    <RouterLink :to="`/coctails/${coctail.idDrink}`">
+      <div
+        :style="`background-image: url(${coctail.strDrinkThumb})`"
+        class="pic"
+      ></div>
+    </RouterLink>
     <div class="name">{{ coctail.strDrink }}</div>
   </div>
 </template>

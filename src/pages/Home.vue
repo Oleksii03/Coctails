@@ -104,7 +104,7 @@ function getCoctails() {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 50px 20px;
-  max-height: 80vh;
+  max-height: 75vh;
   overflow-y: auto;
   border-radius: 4px;
 }
