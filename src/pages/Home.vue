@@ -3,18 +3,24 @@ import { ref } from "vue";
 import AppLayout from "@/components/AppLayout.vue";
 import { useRootStore } from "@/stores/root";
 import { storeToRefs } from "pinia";
+import CoctailThumb from "@/components/CoctailThumb.vue";
 
+// -------/-refs-------------------------
 const rootStore = useRootStore();
 rootStore.getIngredients();
 
-const { ingredients } = storeToRefs(rootStore);
+const { ingredients, coctails } = storeToRefs(rootStore);
 const ingredient = ref(null);
+
+function getCoctails() {
+  rootStore.getCoctails(ingredient.value);
+}
 </script>
 
 <template>
   <AppLayout imgUrl="src/assets/img/bg-1.jpg">
     <div class="wrapper">
-      <div class="info">
+      <div v-if="!ingredient || !coctails" class="info">
         <h1 class="title">Choose your drink</h1>
         <div class="line"></div>
 
@@ -24,6 +30,7 @@ const ingredient = ref(null);
             placeholder="Choose main ingredient"
             size="large"
             class="select"
+            @change="getCoctails"
           >
             <el-option
               v-for="item in ingredients"
@@ -42,6 +49,19 @@ const ingredient = ref(null);
 
         <img class="img" src="@assets/img/coctails.png" alt="Coctails" />
       </div>
+
+      <div v-else class="info">
+        <h1 class="title">COCKTAILS WITH {{ ingredient }}</h1>
+        <div class="line"></div>
+
+        <div class="coctails">
+          <CoctailThumb
+            v-for="coctail of coctails"
+            :key="coctail.idDrink"
+            :coctail="coctail"
+          />
+        </div>
+      </div>
     </div>
   </AppLayout>
 </template>
@@ -49,11 +69,11 @@ const ingredient = ref(null);
 <style lang="scss" scoped>
 @import "@assets/styles/main";
 // ---------------------------------
-.wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+// .wrapper {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
 
 .info {
   padding: 80px 0;
@@ -78,5 +98,14 @@ const ingredient = ref(null);
 
 .img {
   margin: 60px auto 0;
+}
+
+.coctails {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 50px 20px;
+  max-height: 80vh;
+  overflow-y: auto;
+  border-radius: 4px;
 }
 </style>

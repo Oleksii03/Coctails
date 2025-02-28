@@ -31,7 +31,7 @@ const props = defineProps({
   display: flex;
   flex-direction: column;
   background-color: $bgColor;
-  // height: 100vh;
+  height: 100dvh;
   // overflow: hidden;
 
   @media screen and (min-width: 768px) {
@@ -42,7 +42,7 @@ const props = defineProps({
 
 .img {
   background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-position: 50% 20%;
   background-size: cover;
   @media (max-width: 767px) {
     order: 2;
@@ -50,8 +50,8 @@ const props = defineProps({
   }
 
   img {
-    width: 100%;
-    height: 100%;
+    width: 50vw;
+    height: auto;
     object-fit: cover;
     object-position: 50% 0%;
 

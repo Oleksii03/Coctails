@@ -47,6 +47,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Exo 2", serif;
+  background-color: $bgColor;
 }
 
 .title {
@@ -59,7 +60,7 @@ body {
 .line {
   width: 100px;
   height: 3px;
-  margin: 32px auto 0;
+  margin: 32px auto;
   background-color: $accent;
   border-radius: 1px;
 }
